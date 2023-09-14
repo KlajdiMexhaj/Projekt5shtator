@@ -37,7 +37,7 @@
             <div class="card-body">
               <h5 class="card-title">{{item.item_title}}</h5>
               <p class="card-text">{{item.item_description}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="{% url 'detail_page' item.item_id %}" class="btn btn-primary">info</a>
             </div>
           </div>
       </div>
@@ -47,6 +47,7 @@
 <!-- fund grid -->
 
 <!-- Fillim kategori -->
+<h1>Category</h1>
 <div class="container">
   <div class="row">
     {% for kategori in Kategori_data %}
@@ -55,6 +56,7 @@
         <img src="{{kategori.kategori_image.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">{{ kategori.kategori_name }}</p>
+          <a href="{% url 'detail_category' kategori.pk %}" class="btn btn-primary">info</a>
         </div>
       </div>
     {% endfor %}
