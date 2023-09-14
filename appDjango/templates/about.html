@@ -2,5 +2,26 @@
 {% extends 'base/index.html' %}
 
 {% block content %}
+
 <h1>about page</h1>
+<div class="container">
+    <div class="row">
+        {% for staff in Staff_data %}
+        <div class="col">
+            <div class="card mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{staff.staff_image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{staff.staff_name}} {{staff.staff_mbiemri}}</h5>
+                      <p class="card-text">{{staff.staff_description}}</p>
+                    {{staff.staff_email}}
+                    
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div> 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
     {% endblock%}
