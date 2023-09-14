@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Item)
 admin.site.register(Staff)
 admin.site.register(Kategori)
+admin.site.register(Contact)

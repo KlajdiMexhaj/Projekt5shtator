@@ -3,4 +3,22 @@
 
 {% block content %}
 <h1>Contact page</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="name">Emri</label>
+        <input type="text" id="name" name="emri">
+
+        <label for="mbiemri">Mbiemri</label>
+        <input type="text" id="mbiemri" name="mbiemri">
+
+        <label for="email">email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="sms">Mesazh</label>
+        <textarea id="sms" name="sms" cols="30" rows="10"></textarea>
+
+        <input type="submit">
+    </div>
+</form>
     {% endblock%}

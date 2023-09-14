@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base/index.html' %}
+{% block title %} Category {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for item in category_items %}
+        <div class="col">
+            <div class="card" >
+                <img src="{{item.item_image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.item_title}}</h5>
+                  <p class="card-text">{{item.item_description}}</p>
+                  <a href="{% url 'detail_page' item.item_id %}" class="btn btn-primary">info</a>
+                </div>
+              </div>
+          </div>
+       {% endfor %}
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{item_category.kategori_name}}</h1>
+            
+        </div>
+        <div class="col">
+            <img src="{{item_category.kategori_image.url}}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
